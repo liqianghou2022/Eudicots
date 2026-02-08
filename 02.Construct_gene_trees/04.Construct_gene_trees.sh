@@ -50,3 +50,8 @@ parallel -j 40 < 03.iqtree-00.sh
 
 # === Step 4: Get all gene trees
 cat *.treefile > 144-sp.nwk
+
+
+# === Remove leaves (tips) exhibiting bootstrap support values less than 50 in the gene trees.
+nw_ed 144-sp.nwk 'i & b<=50' o > 144-sp-BS50.nwk
+

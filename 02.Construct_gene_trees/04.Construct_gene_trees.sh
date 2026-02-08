@@ -55,3 +55,6 @@ cat *.treefile > 144-sp.nwk
 # === Remove leaves (tips) exhibiting bootstrap support values less than 50 in the gene trees.
 nw_ed 144-sp.nwk 'i & b<=50' o > 144-sp-BS50.nwk
 
+# === Potential long-branch attraction artifacts due to sampling biases were removed with TreeShrink
+run_treeshrink.py -t 144-sp-BS50.nwk -o 144-sp-BS50-ts.nwk -m per-gene -c
+

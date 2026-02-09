@@ -1,0 +1,1 @@
+import pandas as pd; pd.read_csv('37-ACEK-202_transposed.csv').notna().astype(int).to_csv('37-ACEK-202_0-1.transposed.csv', index=False)
